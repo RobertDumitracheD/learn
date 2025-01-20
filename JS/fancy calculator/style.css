@@ -6,12 +6,11 @@
 
 button {
   all: unset;
-  cursor: pointer;
 }
 
 body {
-  height: 100svh;
   font-family: "Inter", sans-serif;
+  height: 100vh;
   background-image: radial-gradient(ellipse, #385300, #212900);
   display: flex;
   justify-content: center;
@@ -27,9 +26,14 @@ body {
   display: flex;
   flex-direction: column;
   align-items: center;
+  transition: all 0.4s;
 }
 
-.counter-title {
+.counter--limit {
+  background-color: #a3d11b;
+}
+
+.counter__title {
   opacity: 0.6;
   text-transform: uppercase;
   letter-spacing: 1px;
@@ -37,31 +41,32 @@ body {
   text-align: center;
   line-height: 0.9;
   font-weight: 500;
-  font-size: 2rem;
-  margin-top: 4rem;
+  font-size: 32px;
+  margin-top: 60px;
 }
 
-.counter-value {
+.counter__value {
   color: #1d2507;
   font-size: 200px;
   font-weight: 600;
-  margin-top: 0.9rem;
+  margin-top: 10px;
 }
 
-.counter-reset-button {
+.counter__reset-button {
+  cursor: pointer;
 }
 
-.counter-reset-icon {
+.counter__reset-icon {
   opacity: 0.3;
-  font-size: 2rem;
+  font-size: 35px;
   transition: all 0.4s;
 }
 
-.counter-reset-icon:hover {
+.counter__reset-icon:hover {
   opacity: 0.5;
 }
 
-.counter-buttons {
+.counter__buttons {
   background-color: #1d2507;
   height: 116px;
   width: 100%;
@@ -71,32 +76,51 @@ body {
   display: flex;
 }
 
-.counter-button {
+.counter__button {
   flex: 1;
   display: flex;
   justify-content: center;
   align-items: center;
+  cursor: pointer;
   transition: all 0.4s;
 }
 
-.counter-button:hover {
+.counter__button:hover {
   background-color: #212b06;
 }
 
-.counter-button-decrease {
+.counter__button--decrease {
 }
 
-.counter-button-increase {
+.counter__button--increase {
+  border-left: 1px solid rgba(189, 254, 0, 0.15);
 }
 
-.counter-icon {
+.counter__icon {
   color: #bdfe00;
   opacity: 0.9;
-  font-size: 3rem;
+  font-size: 40px;
 }
 
-.counter-icon-minus {
+.counter__icon--minus {
 }
 
-.counter-icon-plus {
+.counter__icon--plus {
+}
+
+@media (max-width: 680px) or (max-height: 730px) {
+  .counter {
+    width: 100%;
+    height: 100%;
+    border-radius: 0;
+  }
+
+  .counter__title {
+    margin-top: 100px;
+  }
+
+  .counter__buttons {
+    border-bottom-left-radius: 0;
+    border-bottom-right-radius: 0;
+  }
 }
