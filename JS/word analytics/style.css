@@ -1,70 +1,149 @@
 * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
 body {
-    background-color: #e1e8eb;
-    font-family: 'Inter', sans-serif;
-    height: 100svh;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
+  background-color: #e1e8eb;
+  font-family: "Inter", sans-serif;
+  height: 100svh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 textarea {
-    all: unset;
+  all: unset;
 }
 
 .background {
-    top: 0;
-    position: absolute;
-    z-index: -1;
-    width: 100%;
-    height: 17rem;
-    background-image: linear-gradient(to right, 
-        rgba(101, 0, 163, 0.9),
-        rgba(24, 120, 175, 0.9)),
-        url('https://images.unsplash.com/photo-1546453667-8a8d2d07bc20?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1974&q=100');
+  top: 0;
+  position: absolute;
+  z-index: -1;
+  width: 100%;
+  height: 17rem;
+  background-image: linear-gradient(
+      to right,
+      rgba(101, 0, 163, 0.9),
+      rgba(24, 120, 175, 0.9)
+    ),
+    url("https://images.unsplash.com/photo-1546453667-8a8d2d07bc20?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1974&q=100");
 }
 
 .first-heading {
-    font-size: 4.5rem;
-    letter-spacing: 5px;
-    color: rgba(255, 255, 255, 0.92);
-    text-transform: uppercase;
-    margin-top: 4rem;
+  font-size: 4.5rem;
+  letter-spacing: 5px;
+  color: rgba(255, 255, 255, 0.92);
+  text-transform: uppercase;
+  margin-top: 4rem;
 }
 
 .first-heading-special {
-    font-weight: 300;
+  font-weight: 300;
 }
 
 .container {
-    margin-top: 3rem;
-    width: 50rem;
-    height: 25rem;
-    background-color: #fff;
-    border-radius: 10px;
-    display: flex;
-    overflow: hidden;
+  margin-top: 3rem;
+  width: 50rem;
+  height: 25rem;
+  background-color: #fff;
+  border-radius: 10px;
+  display: flex;
+  overflow: hidden;
 }
 
 .textarea {
-    flex: 2;
-    resize: none;
-    font-size: 1.5rem;
-    padding: 2rem;
-    font: inherit; /* this is necessary because textarea doesnt inherit the font-family declared*/
+  flex: 2;
+  resize: none;
+  font-size: 1.5rem;
+  padding: 2rem;
+  font: inherit; /* this is necessary because textarea doesnt inherit the font-family declared*/
 }
 
 .textarea::placeholder {
-    font-weight: 500;
-    color: #959c9f;
+  font-weight: 500;
+  color: #959c9f;
 }
 
 .stats {
-    flex: 1.3;
-    background-color: #f6f6f6f8;
+  flex: 1.3;
+  background-color: #f6f6f6f8;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.stat {
+  flex: 1 9rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.stat:nth-child(1),
+.stat:nth-child(2) {
+  border-bottom: 1px solid rgba(0, 0, 0, 0.08);
+}
+
+.stat:nth-child(2),
+.stat:nth-child(4) {
+  border-left: 1px solid rgba(0, 0, 0, 0.08);
+}
+
+.stat-number {
+  color: #4d5457;
+  font-size: 2rem;
+  font-weight: 600;
+  margin-bottom: 0.7rem;
+}
+
+.stat-number-limit {
+  color: red;
+}
+
+.second-heading {
+  font-size: 1rem;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  font-weight: 500;
+  color: #747a7c;
+}
+
+footer {
+  margin: 1rem 0;
+  display: flex;
+  width: 50rem;
+  justify-content: space-between;
+}
+
+@media (max-width: 1150px) {
+  .container {
+    width: 85vw;
+    flex-direction: column;
+  }
+
+  .first-heading {
+    font-size: 7vw;
+  }
+
+  .stat {
+    padding: 1rem 0.7rem;
+  }
+
+  .stat:nth-child(1),
+  .stat:nth-child(2),
+  .stat:nth-child(4) {
+    border: none;
+  }
+
+  .stat-number {
+    font-size: 1rem;
+  }
+
+  footer {
+    width: initial;
+    flex-direction: column;
+    align-items: center;
+  }
 }
